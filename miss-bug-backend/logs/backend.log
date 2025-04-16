@@ -1,0 +1,21 @@
+16.4.2025, 19:02:29 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:08:39 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:09:13 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:10:03 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:10:53 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:11:03 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:14:27 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:14:34 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:14:50 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:17:56 - ERROR - couldnt save bugs | ReferenceError: idx is not defined
+16.4.2025, 19:26:41 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:30:19 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:34:29 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:35:56 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:36:37 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:41:54 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:42:42 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:42:57 - ERROR - couldnt save bugs | ReferenceError: bsavedBugug is not defined
+16.4.2025, 19:43:58 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 19:55:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+16.4.2025, 20:01:04 - INFO - Example app listening on port http://127.0.0.1:3030/
