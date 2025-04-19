@@ -44,7 +44,7 @@ async function getById(bugId) {
 
 function remove(bugId) {
     try{
-        return axios.get(`${BASE_URL}/${bugId}/remove`)
+        return axios.delete(BASE_URL + bugId)
     }
     catch(err){
         console.log(err)
@@ -53,8 +53,9 @@ function remove(bugId) {
 }
 
 async function save(bug) {
+    const method = bug._id ? 'put' : 'post'
     try{
-        const {data : savedBug} = await axios.get(`${BASE_URL}/save` , {params : bug})
+        const {data : savedBug} = await axios[method](BASE_URL +(bug._id || '') , bug)
         return savedBug
     }
     catch(err){
