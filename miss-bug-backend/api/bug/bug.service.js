@@ -1,4 +1,4 @@
-import { makeId, readJsonFile, writeJsonFile } from "./utils.js"
+import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js"
 
 export const bugService = {
     query,
@@ -6,6 +6,8 @@ export const bugService = {
     save,
     remove,
 }
+
+const PAGE_SIZE = 3
 
 const bugs = readJsonFile('./data/bugs.json')
 
