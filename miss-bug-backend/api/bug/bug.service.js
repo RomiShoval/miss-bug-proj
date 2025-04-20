@@ -22,6 +22,30 @@ async function query(filterBy) {
             const severity = +filterBy.severity
             bugsToDisplay = bugsToDisplay.filter(bug => bug.severity <= severity)
         }
+        if (filterBy.labels) {
+            const labels = Array.isArray(filterBy.labels) ? filterBy.labels : [filterBy.labels]
+            bugsToDisplay = bugsToDisplay.filter(bug =>
+                bug.labels && bug.labels.some(label => labels.includes(label))
+            )
+        }
+
+    // Sorting
+    if (filterBy.sortBy) {
+        const sortKey = filterBy.sortBy
+        const sortDir = +filterBy.sortDir || 1
+        bugsToDisplay.sort((a, b) => {
+            if (typeof a[sortKey] === 'string') {
+                return a[sortKey].localeCompare(b[sortKey]) * sortDir
+            } else {
+                return (a[sortKey] - b[sortKey]) * sortDir
+            }
+        })
+    }
+
+    // Paging
+    const pageIdx = +filterBy.pageIdx || 0
+    const startIdx = pageIdx * PAGE_SIZE
+    bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
         return bugsToDisplay
     }
     catch(err){

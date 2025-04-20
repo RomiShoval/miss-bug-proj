@@ -4,7 +4,11 @@ import { bugService } from "./bug.service.js";
 export async function getBugs(req,res) {
     const filterBy ={
         txt: req.query.txt,
-		severity: +req.query.severity
+		severity: +req.query.severity,
+		sortBy: req.query.sortBy,
+		sortDir: +req.query.sortDir || 1,
+		pageIdx: +req.query.pageIdx || 0,
+		labels: req.query.labels || []
     }   
     try {
 		const bugs = await bugService.query(filterBy)
@@ -51,14 +55,14 @@ export async function addBug(req, res) {
 	const bugToSave = {
 		_id: req.body._id,
 		title: req.body.title,
-		description: +req.body.description,
+		description: req.body.description,
 		severity: +req.body.severity,
-		createdAt: +req.body.createdAt,
-		labels: +req.body.labels,
+		createdAt: req.body.createdAt || Date.now(),
+		labels: req.body.labels || [],
 	}
 
 	try {
-		const savedBug = await bugService.save(savedBug)
+		const savedBug = await bugService.save(bugToSave)
 		res.send(savedBug)
 	} catch (err) {
 		loggerService.error(`Couldn't save bug`, err)

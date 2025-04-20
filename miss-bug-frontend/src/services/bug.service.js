@@ -7,7 +7,7 @@ const axios = Axios.create({
 })
 
 const STORAGE_KEY = 'bugDB'
-const BASE_URL = 'http://127.0.0.1:3030/api/bug'
+const BASE_URL = 'http://127.0.0.1:3030/api/bug/'
 
 export const bugService = {
     query,
@@ -55,7 +55,7 @@ function remove(bugId) {
 async function save(bug) {
     const method = bug._id ? 'put' : 'post'
     try{
-        const {data : savedBug} = await axios[method](BASE_URL +(bug._id || '') , bug)
+        const {data : savedBug} = await axios[method](BASE_URL + (bug._id || '') , bug)
         return savedBug
     }
     catch(err){
@@ -79,5 +79,12 @@ function getRandomBug() {
 }
 
 function getDefaultFilter() {
-    return { txt: '', severity: ''}
+    return { 
+        txt: '',
+        severity: '',
+        labels: [],
+        sortBy: 'title',
+        sortDir: 1,
+        pageIdx: 0
+    }
 }

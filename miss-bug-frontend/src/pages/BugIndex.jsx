@@ -88,6 +88,11 @@ export function BugIndex() {
         doc.save('bug-report.pdf')
     }
 
+    function handleChange(ev) {
+        const { name, value } = ev.target
+        setFilterBy(prev => ({ ...prev, [name]: value }))
+    }
+
     return (
         <section >
             <h3>Bugs App</h3>
@@ -97,11 +102,11 @@ export function BugIndex() {
                     type="text"
                     placeholder="Search bugs..."
                     value={filterBy.txt}
-                    onChange={(e) => setFilterBy(prev => ({ ...prev, txt: e.target.value }))}
+                    onChange={handleChange}
                 />
                 <select
                     value={filterBy.severity}
-                    onChange={(e) => setFilterBy(prev => ({ ...prev, severity: e.target.value }))}
+                    onChange={handleChange}
                     //onBlur={loadBugs}
                 >
                     <option value="">All Severities</option>
@@ -109,6 +114,22 @@ export function BugIndex() {
                     <option value="2">2 or less</option>
                     <option value="3">3 or less</option>
                     <option value="4">4 or less</option>
+                </select>
+                <select
+                    value={filterBy.sortBy}
+                    onChange={handleChange}
+                >
+                    <option value="title">Sort by Title</option>
+                    <option value="severity">Sort by Severity</option>
+                    <option value="createdAt">Sort by Created At</option>
+                </select>
+
+                <select
+                    value={filterBy.sortDir}
+                    onChange={handleChange}
+                >
+                    <option value="1">Ascending</option>
+                    <option value="-1">Descending</option>
                 </select>
                 <button onClick={downloadPdf}>Download PDF 📄</button>
                 <BugList bugs={bugs} onRemoveBug={onRemoveBug} onEditBug={onEditBug} />
