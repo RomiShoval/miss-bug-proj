@@ -22,6 +22,7 @@ export const bugService = {
 async function query(filterBy = {}) {
     try{
         const {data : bugs} = await axios.get(BASE_URL , {params : filterBy})
+        console.log(bugs)
         return bugs
     }
     catch(err){
@@ -81,9 +82,9 @@ function getRandomBug() {
 function getDefaultFilter() {
     return { 
         txt: '',
-        severity: '',
+        severity: 0,
         labels: [],
-        sortBy: 'title',
+        sortBy: '',
         sortDir: 1,
         pageIdx: 0
     }

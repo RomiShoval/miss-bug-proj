@@ -15,6 +15,7 @@ export function BugIndex() {
     }, [filterBy])
 
     async function loadBugs() {
+        console.log('Loading bugs with filterBy:', filterBy)
         const bugs = await bugService.query(filterBy)
         setBugs(bugs)
     }
@@ -32,11 +33,16 @@ export function BugIndex() {
     }
 
     async function onAddBug() {
-        const bug = {
-            title: prompt('Bug title?'),
-            severity: +prompt('Bug severity?'),
-            description: prompt('Bug description?') || 'No description'
+        const title = prompt('Bug title?')
+        const severity = +prompt('Bug severity?')
+        const description = prompt('Bug description?') || 'No description'
+        
+        if (!title || isNaN(severity)) {
+            showErrorMsg('Invalid input: title or severity')
+            return
         }
+    
+        const bug = { title, description, severity }
         try {
             const savedBug = await bugService.save(bug)
             console.log('Added Bug', savedBug)
@@ -99,12 +105,14 @@ export function BugIndex() {
             <main>
                 <button onClick={onAddBug}>Add Bug ⛐</button>
                 <input
+                    name = "txt"
                     type="text"
                     placeholder="Search bugs..."
                     value={filterBy.txt}
                     onChange={handleChange}
                 />
                 <select
+                    name = "severity"
                     value={filterBy.severity}
                     onChange={handleChange}
                     //onBlur={loadBugs}
@@ -116,6 +124,7 @@ export function BugIndex() {
                     <option value="4">4 or less</option>
                 </select>
                 <select
+                    name="sortBy"
                     value={filterBy.sortBy}
                     onChange={handleChange}
                 >
@@ -125,6 +134,7 @@ export function BugIndex() {
                 </select>
 
                 <select
+                    name="sortDir"
                     value={filterBy.sortDir}
                     onChange={handleChange}
                 >

@@ -20,9 +20,11 @@ async function query(filterBy) {
         }
         if(filterBy.severity) {
             const severity = +filterBy.severity
-            bugsToDisplay = bugsToDisplay.filter(bug => bug.severity <= severity)
+            if(!isNaN(severity) && severity > 0){
+                bugsToDisplay = bugsToDisplay.filter(bug => bug.severity <= severity)
+            }
         }
-        if (filterBy.labels) {
+        if (filterBy.labels.length) {
             const labels = Array.isArray(filterBy.labels) ? filterBy.labels : [filterBy.labels]
             bugsToDisplay = bugsToDisplay.filter(bug =>
                 bug.labels && bug.labels.some(label => labels.includes(label))
@@ -43,10 +45,10 @@ async function query(filterBy) {
     }
 
     // Paging
-    const pageIdx = +filterBy.pageIdx || 0
-    const startIdx = pageIdx * PAGE_SIZE
-    bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
-        return bugsToDisplay
+    // const pageIdx = +filterBy.pageIdx || 0
+    // const startIdx = pageIdx * PAGE_SIZE
+    // bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
+    return bugsToDisplay
     }
     catch(err){
         console.log(err)

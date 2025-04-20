@@ -33,3 +33,34 @@
 20.4.2025, 13:16:30 - INFO - Example app listening on port http://127.0.0.1:3030/
 20.4.2025, 13:18:44 - INFO - Example app listening on port http://127.0.0.1:3030/
 20.4.2025, 17:59:22 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:01:24 - ERROR - Couldn't save bug | Error: Missing required fields
+20.4.2025, 18:01:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:02:41 - ERROR - Couldn't save bug | Error: Missing required fields
+20.4.2025, 18:10:05 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:13:01 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:15:10 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:15:20 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:16:37 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:16:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:18:22 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:18:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:18:36 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:18:45 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:19:05 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:19:08 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:19:21 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:19:35 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:23:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:25:51 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:26:13 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:26:24 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:27:42 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:29:55 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:32:59 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:49:02 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:51:00 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 18:51:03 - ERROR - Couldn't get bugs | TypeError: aVal.localeCompare is not a function
+20.4.2025, 18:56:11 - ERROR - Couldn't get bugs | TypeError: aVal.localeCompare is not a function
+20.4.2025, 18:56:17 - ERROR - Couldn't get bugs | TypeError: aVal.localeCompare is not a function
+20.4.2025, 18:56:39 - INFO - Example app listening on port http://127.0.0.1:3030/
+20.4.2025, 19:00:03 - ERROR - Couldn't get bug 4KZSYX | Error: Cannot find bug
