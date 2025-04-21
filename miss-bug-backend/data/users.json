@@ -1,0 +1,16 @@
+[
+    {
+        "_id": "u102",
+        "fullname": "Dana Green",
+        "username": "dana",
+        "password": "dana5678",
+        "score": 350
+    },
+    {
+        "_id": "u103",
+        "fullname": "Eyal Cohen",
+        "username": "eyal",
+        "password": "eyal9999",
+        "score": 75
+    }
+]

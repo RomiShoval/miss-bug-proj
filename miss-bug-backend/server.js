@@ -2,6 +2,7 @@ import express from 'express'
 import { bugService } from './api/bug/bug.service.js'
 import { loggerService } from './services/logger.service.js'
 import { bugRoutes } from './api/bug/bug.routes.js'
+import { userRoutes } from './api/user/user.routes.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
@@ -23,6 +24,7 @@ app.use(cookieParser())
 app.use(express.json())
 
 app.use('/api/bug', bugRoutes)
+app.use('/api/user', userRoutes)
 
 
 

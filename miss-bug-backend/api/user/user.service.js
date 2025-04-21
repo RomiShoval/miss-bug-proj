@@ -1,4 +1,4 @@
-import { makeId, readJsonFile, writeJsonFile } from '../../services/utils.js'
+import { makeId, readJsonFile ,writeJsonFile } from "../../services/utils.js"
 
 export const userService = {
     query,
@@ -63,4 +63,8 @@ async function save(userToSave) {
         console.log('userService.save() crashed:', err)
         throw err
     }
+}
+
+function saveUsersToFile(){
+    return writeJsonFile('./data/users.json',users)
 }
