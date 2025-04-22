@@ -55,8 +55,15 @@ export function BugIndex() {
     }
 
     async function onEditBug(bug) {
-        const severity = +prompt('New severity?')
-        const bugToSave = { ...bug, severity }
+        const newSeverity = +prompt('New severity?', bug.severity)
+        if (!newSeverity || isNaN(newSeverity)) return
+
+        const bugToSave = {
+            ...bug,
+            severity: newSeverity,
+            title: bug.title || 'Untitled bug',
+            description: bug.description || 'No description',
+        }
         try {
 
             const savedBug = await bugService.save(bugToSave)

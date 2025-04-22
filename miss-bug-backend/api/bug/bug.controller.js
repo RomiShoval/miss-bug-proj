@@ -22,24 +22,52 @@ export async function getBugs(req,res) {
 
 export async function getBug(req, res) {
 	const { bugId } = req.params
-    // console.log()
-	try {
-		const bug = await bugService.getById(bugId)
-		res.send(bug)
-	} catch (err) {
-		loggerService.error(`Couldn't get bug ${bugId}`, err)
-		res.status(400).send(`Couldn't get bug`)
-	}
+
+    try {
+        console.log('Incoming cookies:', req.headers.cookie)
+        let visitedBugs = []
+        if (req.cookies.visitedBugs) {
+            try {
+				console.log(req.cookies.visitedBugs)
+                visitedBugs = JSON.parse(req.cookies.visitedBugs)
+            } catch {
+                console.warn('Corrupted visitedBugs cookie, resetting...')
+                visitedBugs = []
+            }
+        }
+        if (!visitedBugs.includes(bugId)) {
+            visitedBugs.push(bugId)
+        }
+        if (visitedBugs.length > 3) {
+            console.log('User blocked from visiting more bugs:', visitedBugs)
+            return res.status(401).send('Wait for a bit')
+        }(
+		console.log('Setting cookie :' , JSON.stringify(visitedBugs)))
+		console.log('Incoming cookies from client:', req.cookies)
+        res.cookie('visitedBugs', JSON.stringify(visitedBugs), {
+            maxAge: 7000, // 7 seconds
+            httpOnly: false,
+			sameSite: 'Lax',
+        })
+
+        console.log('User visited bugs:', visitedBugs)
+
+        const bug = await bugService.getById(bugId)
+        res.send(bug)
+    } catch (err) {
+        loggerService.error(`Couldn't get bug ${bugId}`, err)
+        res.status(400).send(`Couldn't get bug`)
+    }
 }
 
 export async function updateBug(req, res) {
 	const bugToSave = {
 		_id: req.body._id,
 		title: req.body.title,
-		description: +req.body.description,
+		description: req.body.description,
 		severity: +req.body.severity,
 		createdAt: +req.body.createdAt,
-		labels: +req.body.labels,
+		labels: req.body.labels,
 	}
 
 	try {

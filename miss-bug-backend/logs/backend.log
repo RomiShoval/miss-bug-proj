@@ -104,3 +104,50 @@
 21.4.2025, 16:42:02 - ERROR - Couldn't remove user u102 | ReferenceError: saveUsersToFile is not defined
 21.4.2025, 16:42:14 - ERROR - Couldn't remove user u103 | ReferenceError: saveUsersToFile is not defined
 21.4.2025, 16:50:47 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:36:58 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:41:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:45:26 - ERROR - Couldn't save bug | Error: Missing required fields
+21.4.2025, 17:47:40 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:47:47 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:51:58 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:52:15 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:56:43 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 17:57:32 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:01:29 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:03:46 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:04:22 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:06:54 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:07:27 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:10:40 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:12:37 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:12:40 - ERROR - Couldn't get bug rddtfa | TypeError: Cannot read properties of undefined (reading 'stringify')
+21.4.2025, 18:12:54 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:13:23 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:13:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:14:35 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:19:35 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:20:18 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:24:42 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:24:50 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:25:48 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:27:08 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:28:00 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:29:13 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:29:45 - INFO - Example app listening on port http://127.0.0.1:3030/
+21.4.2025, 18:30:03 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:45:20 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:45:24 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:46:09 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:50:00 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:51:36 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:51:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:52:34 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:53:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 7:57:45 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 8:02:30 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 8:02:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 8:04:36 - INFO - Example app listening on port http://127.0.0.1:3030/
+22.4.2025, 8:12:51 - ERROR - Couldn't save bug | Error: Missing required fields
+22.4.2025, 8:15:52 - ERROR - Couldn't save bug | Error: Missing required fields
+22.4.2025, 8:16:37 - ERROR - Couldn't save bug | Error: Missing required fields
+22.4.2025, 8:17:44 - INFO - Example app listening on port http://127.0.0.1:3030/
