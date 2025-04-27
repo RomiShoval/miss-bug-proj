@@ -1,57 +1,37 @@
 [
     {
-      "_id": "b101",
-      "title": "Cannot save a Car",
-      "description": "Error when clicking Save button on car form",
-      "severity": 3,
-      "createdAt": 1714332209454,
-      "creator": {
-        "_id": "u101",
-        "fullname": "Puki Ja"
-      }
+        "_id": "f8tmlK",
+        "title": "rrr",
+        "description": "rrr",
+        "severity": 2,
+        "createdAt": 1745774092662,
+        "labels": [],
+        "creator": {
+            "_id": "211Cwh",
+            "fullname": "romi",
+            "score": 0
+        }
     },
     {
-      "_id": "b102",
-      "title": "Login button not working",
-      "description": "Nothing happens after clicking login",
-      "severity": 2,
-      "createdAt": 1714301209454,
-      "creator": {
-        "_id": "u102",
-        "fullname": "Muki Ja"
-      }
+        "_id": "b103",
+        "title": "Page crash on submit",
+        "description": "App crashes when submitting empty form",
+        "severity": 4,
+        "createdAt": 1714290009454,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
     },
     {
-      "_id": "b103",
-      "title": "Page crash on submit",
-      "description": "App crashes when submitting empty form",
-      "severity": 4,
-      "createdAt": 1714290009454,
-      "creator": {
-        "_id": "u101",
-        "fullname": "Puki Ja"
-      }
-    },
-    {
-      "_id": "b104",
-      "title": "Image upload timeout",
-      "description": "Image upload sometimes times out after 30s",
-      "severity": 1,
-      "createdAt": 1714282209454,
-      "creator": {
-        "_id": "u103",
-        "fullname": "Kuki Ra"
-      }
-    },
-    {
-      "_id": "b105",
-      "title": "Profile not loading",
-      "description": "User profile doesn't load after login",
-      "severity": 5,
-      "createdAt": 1714270009454,
-      "creator": {
-        "_id": "u102",
-        "fullname": "Muki Ja"
-      }
+        "_id": "b104",
+        "title": "Image upload timeout",
+        "description": "Image upload sometimes times out after 30s",
+        "severity": 1,
+        "createdAt": 1714282209454,
+        "creator": {
+            "_id": "u103",
+            "fullname": "Kuki Ra"
+        }
     }
-  ]
+]

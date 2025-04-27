@@ -160,3 +160,77 @@
 27.4.2025, 19:29:01 - INFO - Example app listening on port http://127.0.0.1:3030/
 27.4.2025, 19:29:07 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100}
 27.4.2025, 19:31:43 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:42:35 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:44:33 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:47:15 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:47:27 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:47:42 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:48:14 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:49:43 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:52:44 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 19:52:44 - ERROR - Failed to Login NaN
+27.4.2025, 19:53:13 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:55:39 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:56:26 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:56:58 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:57:13 - ERROR - Couldn't remove bug b104 | ReferenceError: err is not defined
+27.4.2025, 19:57:17 - ERROR - Couldn't remove bug b105 | ReferenceError: err is not defined
+27.4.2025, 20:05:24 - DEBUG - auth.service - signup with username: roro, fullname: romi
+27.4.2025, 20:05:25 - DEBUG - auth.route - new account created: {"username":"roro","password":"$2b$10$r8tvhlJatkLH/f1kmwPaIO3seKFeZlrD36PEQ3O0lm6KTrjIuTpVe","fullname":"romi","_id":"211Cwh","score":0}
+27.4.2025, 20:05:25 - INFO - User signup: | {"_id":"211Cwh","fullname":"romi","score":0}
+27.4.2025, 20:14:17 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:15:10 - ERROR - Couldn't remove bug RbmnXb | TypeError: Cannot read properties of undefined (reading '_id')
+27.4.2025, 20:15:54 - INFO - User login:  | {"_id":"211Cwh","fullname":"romi","score":0}
+27.4.2025, 20:15:54 - ERROR - Failed to Login NaN
+27.4.2025, 20:16:18 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:16:27 - INFO - User login:  | {"_id":"211Cwh","fullname":"romi","score":0}
+27.4.2025, 20:16:27 - ERROR - Failed to Login NaN
+27.4.2025, 20:16:35 - ERROR - Couldn't remove bug b103 | ReferenceError: err is not defined
+27.4.2025, 20:17:58 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:18:03 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:18:21 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:18:28 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:18:56 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:19:33 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:19:40 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:19:50 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:24:33 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:25:12 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:30:39 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:31:06 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:33:20 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:34:25 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:36:37 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 20:36:37 - ERROR - Failed to Login NaN
+27.4.2025, 20:37:48 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 20:37:48 - ERROR - Failed to Login NaN
+27.4.2025, 20:37:51 - INFO - User login:  | {"_id":"211Cwh","fullname":"romi","score":0}
+27.4.2025, 20:37:51 - ERROR - Failed to Login NaN
+27.4.2025, 20:37:55 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 20:37:55 - ERROR - Failed to Login NaN
+27.4.2025, 20:40:22 - ERROR - Couldn't remove bug f8tmlK | ReferenceError: err is not defined
+27.4.2025, 20:42:05 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 20:43:56 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 20:46:30 - INFO - User login:  | {"_id":"u102","fullname":"Muki Ja","score":90,"isAdmin":false}
+27.4.2025, 20:46:30 - ERROR - Failed to Login NaN
+27.4.2025, 20:46:57 - ERROR - Couldn't remove bug b105 | TypeError: Cannot read properties of undefined (reading '_id')
+27.4.2025, 20:48:32 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:49:17 - INFO - User login:  | {"_id":"u102","fullname":"Muki Ja","score":90,"isAdmin":false}
+27.4.2025, 20:49:17 - ERROR - Failed to Login NaN
+27.4.2025, 20:49:20 - ERROR - Couldn't remove bug b105 | TypeError: Cannot read properties of undefined (reading '_id')
+27.4.2025, 20:50:19 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:50:30 - INFO - User login:  | {"_id":"u102","fullname":"Muki Ja","score":90,"isAdmin":false}
+27.4.2025, 20:50:30 - ERROR - Failed to Login NaN
+27.4.2025, 20:50:37 - ERROR - Failed to Login NaN
+27.4.2025, 20:50:37 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 20:50:40 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 20:52:14 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:53:59 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 20:54:34 - ERROR - Failed to Login NaN
+27.4.2025, 20:54:34 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+27.4.2025, 20:54:43 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 20:56:43 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 21:01:23 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 21:01:35 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 21:14:29 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 21:14:33 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')

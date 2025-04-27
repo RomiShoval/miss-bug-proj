@@ -11,6 +11,7 @@ export async function login(req, res) {
         console.log("🚀 ~ login ~ loginToken:", loginToken)
         console.log("🚀 ~ login ~ user:", user)
         res.json(user)
+        res.send({ _id: user._id, fullname: user.fullname })
     } catch (err) {
         loggerService.error('Failed to Login ' + -err)
         res.status(401).send({ err: 'Failed to Login' })

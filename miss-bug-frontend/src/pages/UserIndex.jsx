@@ -11,7 +11,7 @@ export function UserIndex() {
 
   async function loadUsers() {
     try {
-      const users = await userService.query()
+      const users = await userService.getUsers()
       console.log(users)
       setUsers(users)
     } catch (err) {
@@ -38,7 +38,7 @@ export function UserIndex() {
       score: +prompt('Score?') || 0,
     }
     try {
-      const savedUser = await userService.save(user)
+      const savedUser = await userService.update(user)
       setUsers(prev => [...prev, savedUser])
       showSuccessMsg('User added')
     } catch (err) {
@@ -51,7 +51,7 @@ export function UserIndex() {
     const score = +prompt('New score?', user.score)
     const userToSave = { ...user, score }
     try {
-      const savedUser = await userService.save(userToSave)
+      const savedUser = await userService.update(userToSave)
       setUsers(prev => prev.map(u => (u._id === savedUser._id ? savedUser : u)))
       showSuccessMsg('User updated')
     } catch (err) {

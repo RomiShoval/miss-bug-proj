@@ -69,10 +69,15 @@ async function getById(bugId) {
     }
 }
 
-async function remove(bugId) {
+async function remove(bugId,loggedinUser ) {
     try{
         const bugIdx = bugs.findIndex(bug => bug._id === bugId)
         if (bugIdx === -1) throw new Error('Bug not found')//bug doesnt exist
+        const bug = bugs[bugIdx]
+        if (!loggedinUser?.isAdmin &&
+            bug.creator._id !== loggedinUser._id) {
+            throw 'Not your car'
+        }
         bugs.splice(bugIdx, 1)//remove the bug
         await saveBugsToFile()
     }
@@ -82,7 +87,7 @@ async function remove(bugId) {
     }  
 }
 
-async function save(bugToSave) {
+async function save(bugToSave,loggedinUser) {
     try{
         //bug already exist
         if (!bugToSave.title || !bugToSave.severity || !bugToSave.description) {
@@ -91,10 +96,19 @@ async function save(bugToSave) {
         if (bugToSave._id) {
             const bugIdx = bugs.findIndex(bug => bug._id === bugToSave._id)
             if (bugIdx === -1) throw new Error('Bug not found')
+                const bug = bugs[bugIdx]
+            if (!loggedinUser?.isAdmin &&
+                bug.creator._id !== loggedinUser._id) {
+                throw 'Not your car'
+            }
             bugs[bugIdx] = bugToSave
         } else {
             bugToSave._id = makeId()
             bugToSave.createdAt = Date.now()
+            bugToSave.creator = {
+                _id: loggedinUser._id,
+                fullname: loggedinUser.fullname
+            }
             bugs.unshift(bugToSave)
         }
         await saveBugsToFile()

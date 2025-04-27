@@ -39,13 +39,10 @@ async function getById(userId) {
 }
 
 async function remove(userId) {
-    return await axios.remove(BASE_USER_URL + userId)
+    return await axios.delete(BASE_USER_URL + userId)
 }
 
 async function update(userToUpdate) {
-    // const user = await getById(userToUpdate.id)
-    // console.log('user', user)
-
     const updatedUser = await axios.put(BASE_USER_URL, userToUpdate)
     if (getLoggedinUser().id === updatedUser.id) saveLocalUser(updatedUser)
     return updatedUser

@@ -1,5 +1,6 @@
-import { loggerService } from "../../services/logger.service.js";
-import { userService } from "./user.service.js";
+import { loggerService } from "../../services/logger.service.js"
+import { userService } from "./user.service.js"
+import { bugService } from "../bug/bug.service.js"
 
 export async function getUsers(req, res) {
     try {
@@ -61,6 +62,13 @@ export async function addUser(req, res) {
 export async function removeUser(req, res) {
     const { userId } = req.params
     try {
+        const bugs = await bugService.query({})
+        console.log('All bugs:', bugs)
+        const userBugs = bugs.some(bug => bug.creator && bug.creator._id === userId)
+        console.log('User bugs:', userBugs)
+        if (userBugs.length > 0) {
+            return res.status(400).send('Cannot delete user who has bugs')
+        }
         await userService.remove(userId)
         res.send('OK')
     } catch (err) {

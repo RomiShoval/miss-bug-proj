@@ -1,5 +1,6 @@
-import { loggerService } from "../../services/logger.service.js";
-import { bugService } from "./bug.service.js";
+import { loggerService } from "../../services/logger.service.js"
+import { bugService } from "./bug.service.js"
+import { authService } from "../auth/auth.service.js"
 
 export async function getBugs(req,res) {
     const filterBy ={
@@ -61,16 +62,26 @@ export async function getBug(req, res) {
 }
 
 export async function updateBug(req, res) {
-	const bugToSave = {
-		_id: req.body._id,
-		title: req.body.title,
-		description: req.body.description,
-		severity: +req.body.severity,
-		createdAt: +req.body.createdAt,
-		labels: req.body.labels,
-	}
+	const loginToken = req.cookies.loginToken
+    if (!loginToken) return res.status(401).send('Not logged in')
+    const miniUser = authService.validateToken(loginToken)
+    if (!miniUser) return res.status(401).send('Invalid login token')
 
 	try {
+		const existingBug = await bugService.getById(req.body._id)
+        if (!existingBug) return res.status(404).send('Bug not found')
+
+        if (existingBug.creator._id !== miniUser._id) {
+            return res.status(403).send('Not authorized to update this bug')
+        }
+		const bugToSave = {
+			_id: req.body._id,
+			title: req.body.title,
+			description: req.body.description,
+			severity: +req.body.severity,
+			createdAt: +req.body.createdAt,
+			labels: req.body.labels,
+		}
 		const savedBug = await bugService.save(bugToSave)
 		res.send(savedBug)
 	} catch (err) {
@@ -88,8 +99,13 @@ export async function addBug(req, res) {
 		createdAt: req.body.createdAt || Date.now(),
 		labels: req.body.labels || [],
 	}
-
+	
 	try {
+		const loginToken = req.cookies.loginToken
+		if (!loginToken) return res.status(401).send('Not logged in')
+		const loggedinUser  = authService.validateToken(loginToken)
+		if (!loggedinUser ) return res.status(401).send('Invalid login token')
+		bugToSave.creator=loggedinUser
 		const savedBug = await bugService.save(bugToSave)
 		res.send(savedBug)
 	} catch (err) {
@@ -99,8 +115,19 @@ export async function addBug(req, res) {
 }
 
 export async function removeBug(req, res) {
-	const { bugId } = req.params
+	const loginToken = req.cookies?.loginToken
+    if (!loginToken) return res.status(401).send('Not logged in')
+    const loggedinUser = authService.validateToken(loginToken)
+    if (!loggedinUser) return res.status(401).send('Invalid login token')
+    const { bugId } = req.params
 	try {
+		const bug = await bugService.getById(bugId)
+        if (!bug) return res.status(404).send('Bug not found')
+
+        if (bug.creator._id !== loggedinUser._id) {
+			loggerService.error(`Trying to delete a bug created by another user ${bugId}`, err)
+            return res.status(403).send('You are not authorized to remove this bug')
+        }
 		await bugService.remove(bugId)
 		res.send('OK')
 	} catch (err) {

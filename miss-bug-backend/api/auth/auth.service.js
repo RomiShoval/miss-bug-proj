@@ -43,7 +43,7 @@ async function login(username, password) {
     const miniUser = {
         _id: user._id,
         fullname: user.fullname,
-        imgUrl: user.imgUrl,
+        // imgUrl: user.imgUrl,
         score: user.score,
         isAdmin: user.isAdmin,
         // Additional fields required for miniuser
