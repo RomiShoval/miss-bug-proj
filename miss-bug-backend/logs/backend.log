@@ -151,3 +151,12 @@
 22.4.2025, 8:15:52 - ERROR - Couldn't save bug | Error: Missing required fields
 22.4.2025, 8:16:37 - ERROR - Couldn't save bug | Error: Missing required fields
 22.4.2025, 8:17:44 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:15:01 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:16:03 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:21:54 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:26:53 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:27:03 - ERROR - Failed to Login NaN
+27.4.2025, 19:27:48 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:29:01 - INFO - Example app listening on port http://127.0.0.1:3030/
+27.4.2025, 19:29:07 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100}
+27.4.2025, 19:31:43 - INFO - Example app listening on port http://127.0.0.1:3030/

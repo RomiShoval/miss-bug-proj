@@ -1,96 +1,57 @@
 [
     {
-        "_id": "XuoaGX",
-        "title": "romi12",
-        "description": "romi12",
-        "severity": 12,
-        "createdAt": 1745299133445,
-        "labels": []
+      "_id": "b101",
+      "title": "Cannot save a Car",
+      "description": "Error when clicking Save button on car form",
+      "severity": 3,
+      "createdAt": 1714332209454,
+      "creator": {
+        "_id": "u101",
+        "fullname": "Puki Ja"
+      }
     },
     {
-        "_id": "sEnMfy",
-        "title": "cssw",
-        "description": "wcwe",
-        "severity": 11,
-        "createdAt": 1745161621280,
-        "labels": []
+      "_id": "b102",
+      "title": "Login button not working",
+      "description": "Nothing happens after clicking login",
+      "severity": 2,
+      "createdAt": 1714301209454,
+      "creator": {
+        "_id": "u102",
+        "fullname": "Muki Ja"
+      }
     },
     {
-        "_id": "1JJPVS",
-        "title": "romi6",
-        "description": "romi6",
-        "severity": 6,
-        "createdAt": 1745047034404,
-        "labels": []
+      "_id": "b103",
+      "title": "Page crash on submit",
+      "description": "App crashes when submitting empty form",
+      "severity": 4,
+      "createdAt": 1714290009454,
+      "creator": {
+        "_id": "u101",
+        "fullname": "Puki Ja"
+      }
     },
     {
-        "_id": "iIRUvh",
-        "title": "romi5",
-        "severity": 5,
-        "createdAt": 1744821777212,
-        "description": "romi5"
+      "_id": "b104",
+      "title": "Image upload timeout",
+      "description": "Image upload sometimes times out after 30s",
+      "severity": 1,
+      "createdAt": 1714282209454,
+      "creator": {
+        "_id": "u103",
+        "fullname": "Kuki Ra"
+      }
     },
     {
-        "_id": "RMKHfp",
-        "title": "romi4",
-        "severity": 4,
-        "createdAt": 1744821397064,
-        "description": "romi4"
-    },
-    {
-        "_id": "abc123",
-        "title": "Cannot save a Car",
-        "severity": 3,
-        "createdAt": 1542107359454,
-        "description": "Server returns 500 on car save"
-    },
-    {
-        "_id": "b107",
-        "title": "Notifications not displaying",
-        "severity": 3,
-        "createdAt": 1693107359454,
-        "description": "API call fails with unauthorized error"
-    },
-    {
-        "_id": "b109",
-        "title": "User cannot delete account",
-        "severity": 3,
-        "createdAt": 1702107359454,
-        "description": "Delete API throws permission denied"
-    },
-    {
-        "_id": "b110",
-        "title": "Search shows empty even with matches",
-        "severity": 2,
-        "createdAt": 1710107359454,
-        "description": "Search fails to return partial matches"
-    },
-    {
-        "_id": "JwDQ3S",
-        "title": "romi1",
-        "description": "romi1",
-        "severity": 1,
-        "createdAt": 1745144374721,
-        "labels": []
-    },
-    {
-        "_id": "b103",
-        "title": "Broken image on dashboard",
-        "severity": 1,
-        "createdAt": 1652107359454,
-        "description": "Image URL not resolving correctly"
-    },
-    {
-        "_id": "b105",
-        "title": "Dropdown doesn't close",
-        "severity": 1,
-        "createdAt": 1681107359454,
-        "description": "User has to refresh to hide dropdown"
-    },
-    {
-        "_id": "rddtfa",
-        "severity": 0,
-        "createdAt": 1744820074318,
-        "description": "No description"
+      "_id": "b105",
+      "title": "Profile not loading",
+      "description": "User profile doesn't load after login",
+      "severity": 5,
+      "createdAt": 1714270009454,
+      "creator": {
+        "_id": "u102",
+        "fullname": "Muki Ja"
+      }
     }
-]
+  ]

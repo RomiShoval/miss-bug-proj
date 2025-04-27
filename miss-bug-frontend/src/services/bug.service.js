@@ -7,7 +7,9 @@ const axios = Axios.create({
 })
 
 const STORAGE_KEY = 'bugDB'
-const BASE_URL = 'http://localhost:3030/api/bug/'
+const BASE_URL = (process.env.NODE_ENV !== 'development') ?
+'/api/big/':
+'http://localhost:3030/api/bug/'
 
 export const bugService = {
     query,

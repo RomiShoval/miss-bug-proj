@@ -1,16 +1,23 @@
 [
     {
-        "_id": "u102",
-        "fullname": "Dana Green",
-        "username": "dana",
-        "password": "dana5678",
-        "score": 350
+      "_id": "u101",
+      "fullname": "Puki Ja",
+      "username": "puki",
+      "password": "puki123",
+      "score": 100
     },
     {
-        "_id": "u103",
-        "fullname": "Eyal Cohen",
-        "username": "eyal",
-        "password": "eyal9999",
-        "score": 75
+      "_id": "u102",
+      "fullname": "Muki Ja",
+      "username": "muki",
+      "password": "muki123",
+      "score": 90
+    },
+    {
+      "_id": "u103",
+      "fullname": "Kuki Ra",
+      "username": "kuki",
+      "password": "kuki123",
+      "score": 80
     }
-]
+  ]
