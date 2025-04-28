@@ -234,3 +234,18 @@
 27.4.2025, 21:01:35 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
 27.4.2025, 21:14:29 - INFO - Example app listening on port http://127.0.0.1:3030/
 27.4.2025, 21:14:33 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+27.4.2025, 21:14:55 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 11:28:29 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 11:28:45 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+28.4.2025, 11:28:45 - ERROR - Failed to Login NaN
+28.4.2025, 11:28:48 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'length')
+28.4.2025, 12:17:21 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:17:40 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:17:51 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:18:08 - INFO - User login:  | {"_id":"u101","fullname":"Puki Ja","score":100,"isAdmin":true}
+28.4.2025, 12:18:08 - ERROR - Failed to Login NaN
+28.4.2025, 12:18:17 - ERROR - Couldn't remove user u102 | TypeError: Cannot read properties of undefined (reading 'txt')
+28.4.2025, 12:26:10 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:26:55 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:29:11 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:31:22 - INFO - Example app listening on port http://127.0.0.1:3030/

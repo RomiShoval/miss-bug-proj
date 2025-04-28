@@ -15,14 +15,6 @@
         "isAdmin": true
     },
     {
-        "_id": "u102",
-        "fullname": "Muki Ja",
-        "username": "muki",
-        "password": "muki123",
-        "score": 90,
-        "isAdmin": false
-    },
-    {
         "_id": "u103",
         "fullname": "Kuki Ra",
         "username": "kuki",

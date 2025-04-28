@@ -11,9 +11,12 @@ const PAGE_SIZE = 3
 
 const bugs = readJsonFile('./data/bugs.json')
 
-async function query(filterBy) {
-    let bugsToDisplay = bugs
+async function query(filterBy = {}) {
     try{
+        if (!filterBy || !Object.keys(filterBy).length) {
+            return bugs
+        }
+        let bugsToDisplay = bugs
         if(filterBy.txt) {
             const regExp = new RegExp(filterBy.txt, 'i')
             bugsToDisplay = bugsToDisplay.filter(bug => regExp.test(bug.title))

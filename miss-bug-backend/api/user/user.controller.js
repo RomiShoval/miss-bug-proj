@@ -62,11 +62,12 @@ export async function addUser(req, res) {
 export async function removeUser(req, res) {
     const { userId } = req.params
     try {
-        const bugs = await bugService.query({})
+        const bugs = await bugService.query()
         console.log('All bugs:', bugs)
         const userBugs = bugs.some(bug => bug.creator && bug.creator._id === userId)
         console.log('User bugs:', userBugs)
         if (userBugs.length > 0) {
+            console.log('User owns bugs, cannot delete')
             return res.status(400).send('Cannot delete user who has bugs')
         }
         await userService.remove(userId)
