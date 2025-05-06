@@ -1,22 +1,15 @@
 .login-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-    padding: 2rem;
+    padding: 1rem 1.5rem;
+    width: 280px;
     background: #f8f8f8;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    margin-inline: auto;
 }
 
-.login-form, .signup-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
+.login-form, 
+.signup-form {
+    gap: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .login-form select,

@@ -53,7 +53,7 @@ export function LoginSignup({ onSignup, onLogin }) {
     //     setCredentials(prevCredentials => ({ ...prevCredentials, imgUrl }))
     // }
     return (
-        <div className="login-page">
+            <div className="login-page">
             <p>
                 <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
             </p>
@@ -117,4 +117,5 @@ export function LoginSignup({ onSignup, onLogin }) {
             </div>
         </div>
     )
+        
 }

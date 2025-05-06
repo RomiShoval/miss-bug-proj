@@ -1,4 +1,6 @@
 import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js"
+import { dbService } from '../../services/db.service.js'
+import { ObjectId } from 'mongodb'
 
 export const bugService = {
     query,
@@ -9,49 +11,42 @@ export const bugService = {
 
 const PAGE_SIZE = 3
 
-const bugs = readJsonFile('./data/bugs.json')
+//const bugs = readJsonFile('./data/bugs.json')
 
 async function query(filterBy = {}) {
     try{
-        if (!filterBy || !Object.keys(filterBy).length) {
-            return bugs
-        }
-        let bugsToDisplay = bugs
+        const criteria = {}
+        // if (!filterBy || !Object.keys(filterBy).length) {
+        //     return bugs
+        // }
         if(filterBy.txt) {
-            const regExp = new RegExp(filterBy.txt, 'i')
-            bugsToDisplay = bugsToDisplay.filter(bug => regExp.test(bug.title))
+            criteria.title = { $regex: filterBy.txt, $options: 'i' }
         }
         if(filterBy.severity) {
             const severity = +filterBy.severity
-            if(!isNaN(severity) && severity > 0){
-                bugsToDisplay = bugsToDisplay.filter(bug => bug.severity <= severity)
+            if (!isNaN(severity) && severity > 0) {
+                criteria.severity = { $lte: severity }
             }
         }
         if (filterBy.labels.length) {
             const labels = Array.isArray(filterBy.labels) ? filterBy.labels : [filterBy.labels]
-            bugsToDisplay = bugsToDisplay.filter(bug =>
-                bug.labels && bug.labels.some(label => labels.includes(label))
-            )
+            criteria.labels = { $in: labels }
         }
 
     // Sorting
+    const sort = {}
     if (filterBy.sortBy) {
-        const sortKey = filterBy.sortBy
-        const sortDir = +filterBy.sortDir || 1
-        bugsToDisplay.sort((a, b) => {
-            if (typeof a[sortKey] === 'string') {
-                return a[sortKey].localeCompare(b[sortKey]) * sortDir
-            } else {
-                return (a[sortKey] - b[sortKey]) * sortDir
-            }
-        })
+        sort[filterBy.sortBy] = +filterBy.sortDir || 1
     }
+
+    const collection = await dbService.getCollection('bug')
+    const bugs = await collection.find(criteria).sort(sort).toArray()
+    return bugs
 
     // Paging
     // const pageIdx = +filterBy.pageIdx || 0
     // const startIdx = pageIdx * PAGE_SIZE
     // bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
-    return bugsToDisplay
     }
     catch(err){
         console.log(err)
@@ -62,8 +57,9 @@ async function query(filterBy = {}) {
   
 async function getById(bugId) {
     try{
-        const bug = bugs.find( bug => bug._id == bugId)
-        if(!bug) throw new Error('Cannot find bug')
+        const collection = await dbService.getCollection('bug')
+        const bug = await collection.findOne({ _id: new ObjectId(bugId) })
+        if (!bug) throw new Error('Cannot find bug')
         return bug
     }
     catch(err){
@@ -74,15 +70,14 @@ async function getById(bugId) {
 
 async function remove(bugId,loggedinUser ) {
     try{
-        const bugIdx = bugs.findIndex(bug => bug._id === bugId)
-        if (bugIdx === -1) throw new Error('Bug not found')//bug doesnt exist
-        const bug = bugs[bugIdx]
-        if (!loggedinUser?.isAdmin &&
-            bug.creator._id !== loggedinUser._id) {
-            throw 'Not your car'
+        const collection = await dbService.getCollection('bug')
+        const bug = await collection.findOne({ _id: new ObjectId(bugId) })
+
+        if (!bug) throw new Error('Bug not found')
+        if (!loggedinUser?.isAdmin && bug.creator._id !== loggedinUser._id) {
+            throw new Error('Not your bug')
         }
-        bugs.splice(bugIdx, 1)//remove the bug
-        await saveBugsToFile()
+        await collection.deleteOne({ _id: new ObjectId(bugId) })
     }
     catch(err){
         console.log(err)
@@ -92,30 +87,32 @@ async function remove(bugId,loggedinUser ) {
 
 async function save(bugToSave,loggedinUser) {
     try{
-        //bug already exist
+        const collection = await dbService.getCollection('bug')
         if (!bugToSave.title || !bugToSave.severity || !bugToSave.description) {
             throw new Error('Missing required fields')
         }
         if (bugToSave._id) {
-            const bugIdx = bugs.findIndex(bug => bug._id === bugToSave._id)
-            if (bugIdx === -1) throw new Error('Bug not found')
-                const bug = bugs[bugIdx]
-            if (!loggedinUser?.isAdmin &&
-                bug.creator._id !== loggedinUser._id) {
-                throw 'Not your car'
+            // Update
+            const id = new ObjectId(bugToSave._id)
+            const existing = await collection.findOne({ _id: id })
+            if (!existing) throw new Error('Bug not found')
+
+            if (!loggedinUser?.isAdmin && existing.creator._id !== loggedinUser._id) {
+                throw new Error('Not your bug')
             }
-            bugs[bugIdx] = bugToSave
-        } else {
-            bugToSave._id = makeId()
+        delete bugToSave._id
+        await collection.updateOne({ _id: id }, { $set: bugToSave })
+        bugToSave._id = id
+        }
+        else{
             bugToSave.createdAt = Date.now()
             bugToSave.creator = {
                 _id: loggedinUser._id,
                 fullname: loggedinUser.fullname
             }
-            bugs.unshift(bugToSave)
+            const res = await collection.insertOne(bugToSave)
+            bugToSave._id = res.insertedId
         }
-        await saveBugsToFile()
-        return bugToSave
     }
     catch(err){
         console.log( 'bugService.save() crashed:' , err)

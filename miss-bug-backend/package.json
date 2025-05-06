@@ -16,7 +16,8 @@
     "cors": "^2.8.5",
     "cryptr": "^6.3.0",
     "express": "^5.1.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.16.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
