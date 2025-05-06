@@ -249,3 +249,5 @@
 28.4.2025, 12:26:55 - INFO - Example app listening on port http://127.0.0.1:3030/
 28.4.2025, 12:29:11 - INFO - Example app listening on port http://127.0.0.1:3030/
 28.4.2025, 12:31:22 - INFO - Example app listening on port http://127.0.0.1:3030/
+28.4.2025, 12:53:26 - INFO - User login:  | {"_id":"211Cwh","fullname":"romi","score":0}
+28.4.2025, 12:53:26 - ERROR - Failed to Login NaN
