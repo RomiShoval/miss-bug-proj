@@ -58,7 +58,7 @@ async function query(filterBy = {}) {
 async function getById(bugId) {
     try{
         const collection = await dbService.getCollection('bug')
-        const bug = await collection.findOne({ _id: new ObjectId(bugId) })
+        const bug = await collection.findOne({ _id: ObjectId.createFromHexString(bugId) })
         if (!bug) throw new Error('Cannot find bug')
         return bug
     }
@@ -71,13 +71,13 @@ async function getById(bugId) {
 async function remove(bugId,loggedinUser ) {
     try{
         const collection = await dbService.getCollection('bug')
-        const bug = await collection.findOne({ _id: new ObjectId(bugId) })
+        const bug = await collection.findOne({ _id: ObjectId.createFromHexString(bugId) })
 
         if (!bug) throw new Error('Bug not found')
         if (!loggedinUser?.isAdmin && bug.creator._id !== loggedinUser._id) {
             throw new Error('Not your bug')
         }
-        await collection.deleteOne({ _id: new ObjectId(bugId) })
+        await collection.deleteOne({ _id: ObjectId.createFromHexString(bugId) })
     }
     catch(err){
         console.log(err)
@@ -93,7 +93,7 @@ async function save(bugToSave,loggedinUser) {
         }
         if (bugToSave._id) {
             // Update
-            const id = new ObjectId(bugToSave._id)
+            const id = ObjectId.createFromHexString(bugToSave._id)
             const existing = await collection.findOne({ _id: id })
             if (!existing) throw new Error('Bug not found')
 
