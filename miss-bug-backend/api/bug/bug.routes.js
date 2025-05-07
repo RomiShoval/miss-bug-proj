@@ -5,9 +5,9 @@ import { requireAdmin,requireAuth } from '../../middlewares/requireAuth.middlewa
 
 const router = express.Router()
 
-router.get('/', getBugs)
+router.get('/',log, getBugs)
 router.get('/:bugId',log,requireAuth, getBug)
-router.put('/:bugId',requireAuth, updateBug)
+router.put('/:bugId',log,requireAuth, updateBug)
 router.post('/',requireAuth, addBug)
 router.delete('/:bugId',requireAuth, removeBug)
 

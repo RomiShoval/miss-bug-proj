@@ -15,33 +15,36 @@ const PAGE_SIZE = 3
 
 async function query(filterBy = {}) {
     try{
+        const collection = await dbService.getCollection('bug')
+
         const criteria = {}
-        // if (!filterBy || !Object.keys(filterBy).length) {
-        //     return bugs
-        // }
-        if(filterBy.txt) {
-            criteria.title = { $regex: filterBy.txt, $options: 'i' }
+    
+        if (filterBy.txt?.trim()) {
+          criteria.title = { $regex: filterBy.txt, $options: 'i' }
         }
-        if(filterBy.severity) {
-            const severity = +filterBy.severity
-            if (!isNaN(severity) && severity > 0) {
-                criteria.severity = { $lte: severity }
-            }
+    
+        if (filterBy.severity && +filterBy.severity > 0) {
+          criteria.severity = { $lte: +filterBy.severity }
         }
-        if (filterBy.labels.length) {
-            const labels = Array.isArray(filterBy.labels) ? filterBy.labels : [filterBy.labels]
-            criteria.labels = { $in: labels }
+    
+        if (Array.isArray(filterBy.labels) && filterBy.labels.length > 0) {
+          criteria.labels = { $in: filterBy.labels }
         }
-
-    // Sorting
-    const sort = {}
-    if (filterBy.sortBy) {
+    
+        const sort = {}
+        if (filterBy.sortBy?.trim()) {
         sort[filterBy.sortBy] = +filterBy.sortDir || 1
-    }
+        }
+        console.log('🔍 criteria:', criteria)
+    console.log('📊 sort:', sort)
 
-    const collection = await dbService.getCollection('bug')
-    const bugs = await collection.find(criteria).sort(sort).toArray()
-    return bugs
+        const cursor = collection.find(criteria)
+        if (filterBy.sortBy?.trim()) {
+        cursor.sort(sort)
+        }
+    
+        const bugs = await cursor.toArray()
+        return bugs
 
     // Paging
     // const pageIdx = +filterBy.pageIdx || 0

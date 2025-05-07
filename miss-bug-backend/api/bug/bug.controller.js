@@ -10,7 +10,8 @@ export async function getBugs(req,res) {
 		sortDir: +req.query.sortDir || 1,
 		pageIdx: +req.query.pageIdx || 0,
 		labels: req.query.labels || []
-    }   
+    }  
+	console.log('Received filterBy:', filterBy) 
     try {
 		const bugs = await bugService.query(filterBy)
 		res.send(bugs)

@@ -266,3 +266,63 @@
 6.5.2025, 19:10:53 - INFO - Example app listening on port http://127.0.0.1:3030/
 6.5.2025, 19:12:17 - INFO - Example app listening on port http://127.0.0.1:3030/
 6.5.2025, 19:12:24 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 10:54:10 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 10:54:18 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 10:55:32 - INFO - Visited route | /
+7.5.2025, 10:55:32 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 10:56:22 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 10:56:25 - INFO - Visited route | /
+7.5.2025, 10:56:25 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 10:56:38 - INFO - Visited route | /
+7.5.2025, 10:56:38 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 10:59:40 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 10:59:43 - INFO - Visited route | /
+7.5.2025, 10:59:43 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:00:04 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:00:16 - INFO - Visited route | /
+7.5.2025, 11:00:16 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:07:34 - INFO - Visited route | /
+7.5.2025, 11:07:34 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:07:47 - INFO - Visited route | /
+7.5.2025, 11:07:47 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:09:21 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:10:21 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:11:08 - INFO - Visited route | /
+7.5.2025, 11:11:38 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:12:03 - INFO - Visited route | /
+7.5.2025, 11:12:33 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:19:10 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:19:13 - INFO - Visited route | /
+7.5.2025, 11:19:43 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:20:59 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:21:07 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:21:10 - INFO - Visited route | /
+7.5.2025, 11:21:40 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:30:41 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:31:04 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:31:45 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:31:52 - INFO - Visited route | /
+7.5.2025, 11:32:22 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:33:26 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:33:30 - INFO - Visited route | /
+7.5.2025, 11:34:00 - ERROR - Failed to get Mongo collection | ReferenceError: logger is not defined
+7.5.2025, 11:34:00 - ERROR - Couldn't get bugs | ReferenceError: logger is not defined
+7.5.2025, 11:34:23 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:34:32 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:34:34 - INFO - Visited route | /
+7.5.2025, 11:35:04 - ERROR - Cannot Connect to DB | MongoServerSelectionError: connect ECONNREFUSED ::1:27017
+7.5.2025, 11:35:04 - ERROR - Failed to get Mongo collection | MongoServerSelectionError: connect ECONNREFUSED ::1:27017
+7.5.2025, 11:35:04 - ERROR - Couldn't get bugs | MongoServerSelectionError: connect ECONNREFUSED ::1:27017
+7.5.2025, 11:41:19 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 11:41:26 - INFO - Visited route | /
+7.5.2025, 14:13:25 - INFO - Visited route | /
+7.5.2025, 15:05:54 - INFO - Visited route | /
+7.5.2025, 20:04:50 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:05:16 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:05:24 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:06:25 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:07:00 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:07:35 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:07:46 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:09:48 - INFO - Example app listening on port http://127.0.0.1:3030/
+7.5.2025, 20:10:46 - INFO - Example app listening on port http://127.0.0.1:3030/
